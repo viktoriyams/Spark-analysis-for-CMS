@@ -4,11 +4,12 @@ import matplotlib
 matplotlib.use("Agg")
 from pyspark.sql import DataFrame, SparkSession
 from pyspark.sql.functions import count, desc, max, min, datediff, lag, sum, col, collect_list, udf
-import matplotlib.pyplot as plt
-import pandas as pd
 from pyspark.sql.window import Window
-import ast
+import matplotlib.pyplot as plt
+import matplotlib.ticker as ticker
+import pandas as pd
 import numpy as np
+import ast
 import argparse
 
 spark = SparkSession.builder.appName("victoria").getOrCreate()
