@@ -26,25 +26,6 @@ def intervals(times):
 
 intervals_udf = udf(intervals)
 
-def comparison2(intervals):
-    arr = ast.literal_eval(intervals)
-    if len(arr) == 0:
-        return 0
-    if len(arr)>1:
-        i=0
-        while (arr[0]<time and i < len(arr)-1):
-            if arr[i]<time:
-                arr[i+1]+=arr[i]
-                del arr[i]
-            else:
-                i +=1
-    if ((len(arr)==1 and arr[0]<time) or len(arr) == 0):
-        return 1
-    else:
-        return arr
-
-comparison2_udf = udf(comparison2)
-
 def chek(val):
     return (val != 0 and val != 1)
 
